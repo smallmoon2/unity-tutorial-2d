@@ -7,9 +7,9 @@ public class Calculator : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        int addResult = AddMethod(); // 함수 호출
+        int addResult = 0;
 
-        int minusResult = MinusMethod(); // 함수 호출
+        int minusResult = 0;
 
         Debug.Log($"더한 값 : {addResult} / 뺀 값 : {minusResult}");
     }
