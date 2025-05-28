@@ -3,7 +3,7 @@ using UnityEngine;
 public class Transform_LoopMap : MonoBehaviour
 {
     public float MoveSpeed = 3f;
-
+    public float randomPosY;
     float height = 0;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -19,7 +19,11 @@ public class Transform_LoopMap : MonoBehaviour
         if (transform.position.x <= -30f)
         {
 
-            transform.position = new Vector3(30f, height, 0f);
+            randomPosY = Random.Range(-8f, -2.5f);
+            transform.position = new Vector3(30f, randomPosY, 0f);
+
         }
+
+       
     }
 }
