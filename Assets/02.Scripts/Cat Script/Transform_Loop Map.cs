@@ -19,7 +19,7 @@ public class Transform_LoopMap : MonoBehaviour
         if (transform.position.x <= -30f)
         {
 
-            randomPosY = Random.Range(-8f, -2.5f);
+            randomPosY = Random.Range(-8f, -1.5f);
             transform.position = new Vector3(30f, randomPosY, 0f);
 
         }

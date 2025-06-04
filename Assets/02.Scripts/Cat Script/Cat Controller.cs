@@ -1,28 +1,33 @@
-using Unity.VisualScripting;
+using Cat;
+using System;
 using UnityEngine;
 
 public class CatController : MonoBehaviour
 {
+    public SoundManager SoundManager;
     private Rigidbody2D catRb;
-    public float jumpPower = 10f;
+    private Animator catAnim;
 
-    public bool isGround = true;
+    public float jumpPower = 10f;
+    public bool isGround = false;
+
     public int jumpCount = 0;
+
     void Start()
     {
         catRb = GetComponent<Rigidbody2D>();
+        catAnim = GetComponent<Animator>();
     }
 
     void Update()
     {
-        // 스페이스 키 입력
         if (Input.GetKeyDown(KeyCode.Space) && jumpCount < 2)
         {
-            // 점프 = y축 방향으로 이동 X
-
+            SoundManager.OnJumpSound();
+            catAnim.SetTrigger("Jump");
+            catAnim.SetBool("isGround", false);
             catRb.AddForceY(jumpPower, ForceMode2D.Impulse);
-            jumpCount++;
-
+            jumpCount++; // 1씩 증가
         }
     }
 
@@ -30,6 +35,8 @@ public class CatController : MonoBehaviour
     {
         if (other.gameObject.CompareTag("Ground"))
         {
+            
+            catAnim.SetBool("isGround", true);
             jumpCount = 0;
             isGround = true;
         }
@@ -42,5 +49,4 @@ public class CatController : MonoBehaviour
             isGround = false;
         }
     }
-
 }
