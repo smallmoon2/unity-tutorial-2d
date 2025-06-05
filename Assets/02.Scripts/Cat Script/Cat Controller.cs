@@ -11,6 +11,7 @@ public class CatController : MonoBehaviour
     public float jumpPower = 10f;
     public bool isGround = false;
 
+    public float limitPower = 7f;
     public int jumpCount = 0;
 
     void Start()
@@ -28,6 +29,12 @@ public class CatController : MonoBehaviour
             catAnim.SetBool("isGround", false);
             catRb.AddForceY(jumpPower, ForceMode2D.Impulse);
             jumpCount++; // 1¾¿ Áõ°¡
+
+
+            if(catRb.linearVelocityY > limitPower)
+            {
+                catRb.linearVelocityY = limitPower;
+            }
         }
     }
 
