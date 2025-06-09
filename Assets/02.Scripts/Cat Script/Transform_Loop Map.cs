@@ -15,7 +15,7 @@ public class Transform_LoopMap : MonoBehaviour
     void Update()
     {
         transform.position += Vector3.left * MoveSpeed * Time.fixedDeltaTime;
-        Debug.Log(Time.fixedDeltaTime);
+
         if (transform.position.x <= -30f)
         {
 

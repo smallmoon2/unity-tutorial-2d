@@ -537,13 +537,13 @@ AudioSource:
   m_audioClip: {fileID: 0}
   m_Resource: {fileID: 0}
   m_PlayOnAwake: 1
-  m_Volume: 1
+  m_Volume: 0.461
   m_Pitch: 1
   Loop: 0
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
-  Priority: 128
+  Priority: 62
   DopplerLevel: 1
   MinDistance: 1
   MaxDistance: 500
@@ -2916,14 +2916,14 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1897940023}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0.008726558, w: 0.999962}
   m_LocalPosition: {x: -7.22, y: -4.15, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1461044893}
   m_Father: {fileID: 2105850827}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 1}
 --- !u!58 &1897940027
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -2999,10 +2999,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1f82a4947b8028244b2ced2a61d2da78, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  SoundManager: {fileID: 392391126}
+  soundManager: {fileID: 392391126}
   jumpPower: 6
-  isGround: 1
   limitPower: 7
+  isGround: 1
   jumpCount: 0
 --- !u!1 &2034848380
 GameObject:
