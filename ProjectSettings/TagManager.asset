@@ -8,6 +8,8 @@ TagManager:
   - Ground
   - gameover
   - Score
+  - Apple
+  - Pipe
   layers:
   - Default
   - TransparentFX
