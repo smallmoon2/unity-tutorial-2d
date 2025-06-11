@@ -1,11 +1,12 @@
 using System;
 using UnityEngine;
 using Cat;
+using System.Collections;
 
 public class CatController : MonoBehaviour
 {
     public SoundManager soundManager;
-
+    public VideoManager videoManager;
     public GameObject gameOverUI;
     public GameObject fadeUI;
 
@@ -61,7 +62,7 @@ public class CatController : MonoBehaviour
                 fadeUI.GetComponent<FadeRoutine>().OnFade(3f, Color.white);
                 this.GetComponent<CircleCollider2D>().enabled = false;
 
-                Invoke("HappyVideo", 5f);
+                StartCoroutine(EndingRoutine(true));
             }
         }
     }
@@ -77,7 +78,7 @@ public class CatController : MonoBehaviour
             fadeUI.GetComponent<FadeRoutine>().OnFade(3f, Color.black); // 페이드 실행
             this.GetComponent<CircleCollider2D>().enabled = false;
 
-            Invoke("SadVideo", 5f);
+            StartCoroutine(EndingRoutine(false));
         }
 
         if (other.gameObject.CompareTag("Ground"))
@@ -87,18 +88,12 @@ public class CatController : MonoBehaviour
         }
     }
 
-    private void HappyVideo()
-    {
-        happyVideo.SetActive(true);
-        fadeUI.SetActive(false);
-        gameOverUI.SetActive(false);
-        UIManagers.playUI.SetActive(false);
-        soundManager.audioSource.mute = true;
-    }
 
-    private void SadVideo()
+    IEnumerator EndingRoutine(bool isHappy)
     {
-        sadVideo.SetActive(true);
+        yield return new WaitForSeconds(5);
+        videoManager.VideoPlay(isHappy);
+
         fadeUI.SetActive(false);
         gameOverUI.SetActive(false);
         UIManagers.playUI.SetActive(false);
