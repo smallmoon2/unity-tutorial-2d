@@ -1,34 +1,43 @@
 using System;
+using System.Collections;
 using UnityEngine;
 using Cat;
-using System.Collections;
 
 public class CatController : MonoBehaviour
 {
     public SoundManager soundManager;
     public VideoManager videoManager;
+
     public GameObject gameOverUI;
     public GameObject fadeUI;
 
-    public GameObject happyVideo;
-    public GameObject sadVideo;
-
     private Rigidbody2D catRb;
     private Animator catAnim;
-
-    public UIManager UIManagers;
 
     public int jumpCount = 0;
     public float jumpPower = 30f;
     public float limitPower = 25f;
 
-    void Start()
+    void Awake() // 1번만 실행
     {
         catRb = GetComponent<Rigidbody2D>();
         catAnim = GetComponent<Animator>();
     }
 
+    void OnEnable() // 켜질때마다 1번씩 실행
+    {
+        transform.localPosition = Vector3.zero; // 고양이 처음 위치
+
+        GetComponent<CircleCollider2D>().enabled = true;
+        soundManager.audioSource.Play();
+    }
+
     void Update()
+    {
+        Jump();
+    }
+
+    private void Jump()
     {
         if (Input.GetKeyDown(KeyCode.Space) && jumpCount < 10)
         {
@@ -60,8 +69,9 @@ public class CatController : MonoBehaviour
             {
                 fadeUI.SetActive(true);
                 fadeUI.GetComponent<FadeRoutine>().OnFade(3f, Color.white);
-                this.GetComponent<CircleCollider2D>().enabled = false;
+                GetComponent<CircleCollider2D>().enabled = false;
 
+                Debug.Log("사과 10개 먹어서 성공 이벤트");
                 StartCoroutine(EndingRoutine(true));
             }
         }
@@ -76,8 +86,9 @@ public class CatController : MonoBehaviour
             gameOverUI.SetActive(true); // 게임 오버 켜기
             fadeUI.SetActive(true); // 페이드 켜기
             fadeUI.GetComponent<FadeRoutine>().OnFade(3f, Color.black); // 페이드 실행
-            this.GetComponent<CircleCollider2D>().enabled = false;
+            GetComponent<CircleCollider2D>().enabled = false;
 
+            Debug.Log("파이프 충돌 이벤트");
             StartCoroutine(EndingRoutine(false));
         }
 
@@ -88,16 +99,17 @@ public class CatController : MonoBehaviour
         }
     }
 
-
     IEnumerator EndingRoutine(bool isHappy)
     {
-        yield return new WaitForSeconds(5);
+        yield return new WaitForSeconds(3.5f);
+        transform.parent.gameObject.SetActive(false); // PLAY 오브젝트 Off
+
         videoManager.VideoPlay(isHappy);
 
         fadeUI.SetActive(false);
         gameOverUI.SetActive(false);
-        UIManagers.playUI.SetActive(false);
-        soundManager.audioSource.mute = true;
-    }
+        soundManager.audioSource.Stop();
 
+        Debug.Log("영상 재생 완료");
+    }
 }
