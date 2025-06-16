@@ -1,20 +1,15 @@
 using UnityEngine;
 
-public class Orc : Monster, IMove, IAttack
+public class TownGuard : MonoBehaviour, IMove, IAttack
+
 {
-    public float hp;
-    public float moveSpeed;
-
-
     public void Attack()
     {
         Debug.Log("Attack");
     }
 
-
-
     public void Move()
     {
-       
+        Debug.Log("Move");
     }
 }
