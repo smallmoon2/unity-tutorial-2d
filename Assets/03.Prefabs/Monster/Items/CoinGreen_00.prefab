@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 1763472798859440274}
   - component: {fileID: 1491843610053140194}
   - component: {fileID: -7486805602809050638}
+  - component: {fileID: 9097862297907821919}
   m_Layer: 6
   m_Name: CoinGreen_00
   m_TagString: Untagged
@@ -152,3 +153,16 @@ CircleCollider2D:
   m_CompositeOrder: 0
   m_Offset: {x: 0, y: 0.3}
   m_Radius: 0.3
+--- !u!114 &9097862297907821919
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8629029874673381567}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6bb1fc2e3310358408165fc5229b88d5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  potionType: 0

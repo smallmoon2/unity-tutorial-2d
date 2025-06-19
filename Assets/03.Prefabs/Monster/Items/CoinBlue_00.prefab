@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 7516102084396121848}
   - component: {fileID: 1710090462546279325}
   - component: {fileID: 4178949890483433982}
+  - component: {fileID: -6887373612208557197}
   m_Layer: 6
   m_Name: CoinBlue_00
   m_TagString: Untagged
@@ -152,3 +153,16 @@ CircleCollider2D:
   m_CompositeOrder: 0
   m_Offset: {x: 0, y: 0.3}
   m_Radius: 0.3
+--- !u!114 &-6887373612208557197
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8114676155166459577}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6bb1fc2e3310358408165fc5229b88d5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  potionType: 0

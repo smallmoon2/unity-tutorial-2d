@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 4641273354927949538}
   - component: {fileID: 7772092067230926173}
   - component: {fileID: 8464428958458223645}
+  - component: {fileID: 3646758931261025668}
   m_Layer: 6
   m_Name: JarPurple_00
   m_TagString: Untagged
@@ -152,3 +153,16 @@ CircleCollider2D:
   m_CompositeOrder: 0
   m_Offset: {x: 0, y: 0.53333336}
   m_Radius: 0.53333336
+--- !u!114 &3646758931261025668
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3329584159665749117}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6bb1fc2e3310358408165fc5229b88d5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  potionType: 0
