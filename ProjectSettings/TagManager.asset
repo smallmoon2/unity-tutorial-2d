@@ -12,6 +12,7 @@ TagManager:
   - Pipe
   - Coin
   - Monster
+  - TrackingObject
   layers:
   - Default
   - TransparentFX
