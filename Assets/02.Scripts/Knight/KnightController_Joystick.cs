@@ -1,54 +1,75 @@
 using System;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class KnightController_Joystick : MonoBehaviour
 {
     private Animator animator;
     private Rigidbody2D knightRb;
 
+    [SerializeField] private Button jumpButton;
+    [SerializeField] private Button atkButton;
+
     private Vector3 inputDir;
     [SerializeField] private float moveSpeed = 3f;
     [SerializeField] private float jumpPower = 13f;
+
+
+    private bool isCombo;
+    private bool isAttack;
+
+    private bool isGround;
 
     void Start()
     {
         animator = GetComponent<Animator>();
         knightRb = GetComponent<Rigidbody2D>();
+
+        jumpButton.onClick.AddListener(Jump);
+        atkButton.onClick.AddListener(Attack);
     }
 
-    void Update() // 일반적인 작업
+    void Update()
     {
-        InputKeyboard();
+
     }
 
-    void FixedUpdate() // 물리적인 작업
+    void FixedUpdate()
     {
         Move();
     }
 
-    private void OnCollisionEnter2D(Collision2D other)
+    void OnCollisionEnter2D(Collision2D other)
     {
         if (other.gameObject.CompareTag("Ground"))
         {
             animator.SetBool("isGround", true);
+            isGround = true;
         }
-
     }
-    private void OnCollisionExit2D(Collision2D other)
+
+    void OnCollisionExit2D(Collision2D other)
     {
         if (other.gameObject.CompareTag("Ground"))
         {
             animator.SetBool("isGround", false);
+            isGround = false;
         }
+        Debug.Log("Ground Exit");
     }
-    void InputKeyboard()
-    {
-        float h = Input.GetAxis("Horizontal");
-        float v = Input.GetAxis("Vertical");
-        inputDir = new Vector3(h, v, 0);
 
-        Jump();
-        SetAnimation();
+    public void InputJoystick(float x, float y)
+    {
+        inputDir = new Vector3(x, y, 0).normalized;
+
+        animator.SetFloat("JoystickX", inputDir.x);
+        animator.SetFloat("JoystickY", inputDir.y);
+
+        if (inputDir.x != 0)
+        {
+            var scaleX = inputDir.x > 0 ? 1 : -1;
+            transform.localScale = new Vector3(scaleX, 1, 1);
+        }
     }
 
     void Move()
@@ -59,23 +80,47 @@ public class KnightController_Joystick : MonoBehaviour
 
     void Jump()
     {
-        if (Input.GetKeyDown(KeyCode.Space))
+        if (isGround)
         {
             animator.SetTrigger("Jump");
             knightRb.AddForceY(jumpPower, ForceMode2D.Impulse);
+            Debug.Log("점프");
+        }
+    }
+    void Attack()
+    {
+        if (!isAttack)
+        {
+            isAttack = true;
+            animator.SetTrigger("Attack");
+        }
+
+        else
+        {
+            isCombo = true;
+            Debug.Log("콤보 확인");
+        }
+        
+    }
+    public void CheakCombo()
+    {
+        Debug.Log("CheakCombo");
+        if (isCombo)
+        {
+            Debug.Log("콤보 실행");
+            animator.SetBool("isCombo", true);
+
+        }
+        else
+        {
+            animator.SetBool("isCombo", false);
+            isAttack = false;
         }
     }
 
-    void SetAnimation()
+    public void EndCombo()
     {
-        if (inputDir.x != 0)
-        {
-            var scaleX = inputDir.x > 0 ? 1 : -1;
-            transform.localScale = new Vector3(scaleX, 1, 1);
-
-            animator.SetBool("isRun", true);
-        }
-        else if (inputDir.x == 0)
-            animator.SetBool("isRun", false);
+        isCombo = false;
+        isAttack = false;
     }
 }
