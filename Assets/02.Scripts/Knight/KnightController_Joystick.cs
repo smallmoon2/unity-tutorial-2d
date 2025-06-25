@@ -14,6 +14,7 @@ public class KnightController_Joystick : MonoBehaviour
     [SerializeField] private float moveSpeed = 3f;
     [SerializeField] private float jumpPower = 13f;
 
+    private float atkDamage = 3f;
 
     private bool isCombo;
     private bool isAttack;
@@ -29,16 +30,19 @@ public class KnightController_Joystick : MonoBehaviour
         atkButton.onClick.AddListener(Attack);
     }
 
-    void Update()
-    {
 
-    }
 
     void FixedUpdate()
     {
         Move();
     }
 
+    private void OnTriggerEnter2D(Collider2D other)
+    {
+        if (other.CompareTag("Monster")){
+            Debug.Log($"{atkDamage}로 공격");
+        }
+    }
     void OnCollisionEnter2D(Collision2D other)
     {
         if (other.gameObject.CompareTag("Ground"))
@@ -65,17 +69,18 @@ public class KnightController_Joystick : MonoBehaviour
         animator.SetFloat("JoystickX", inputDir.x);
         animator.SetFloat("JoystickY", inputDir.y);
 
-        if (inputDir.x != 0)
-        {
-            var scaleX = inputDir.x > 0 ? 1 : -1;
-            transform.localScale = new Vector3(scaleX, 1, 1);
-        }
+
     }
 
     void Move()
     {
         if (inputDir.x != 0)
+        {
+            var scaleX = inputDir.x > 0 ? 1 : -1;
+            transform.localScale = new Vector3(scaleX, 1, 1);
+
             knightRb.linearVelocityX = inputDir.x * moveSpeed;
+        }
     }
 
     void Jump()
@@ -84,7 +89,7 @@ public class KnightController_Joystick : MonoBehaviour
         {
             animator.SetTrigger("Jump");
             knightRb.AddForceY(jumpPower, ForceMode2D.Impulse);
-            Debug.Log("점프");
+ 
         }
     }
     void Attack()
@@ -92,35 +97,41 @@ public class KnightController_Joystick : MonoBehaviour
         if (!isAttack)
         {
             isAttack = true;
+            atkDamage = 3f;
             animator.SetTrigger("Attack");
         }
 
         else
         {
             isCombo = true;
-            Debug.Log("콤보 확인");
+            
         }
         
     }
-    public void CheakCombo()
+    public void WaitCombo()
     {
-        Debug.Log("CheakCombo");
+        
         if (isCombo)
         {
-            Debug.Log("콤보 실행");
+            
+            atkDamage = 5f;
             animator.SetBool("isCombo", true);
+            
 
         }
         else
         {
-            animator.SetBool("isCombo", false);
             isAttack = false;
+            animator.SetBool("isCombo", false);
+
         }
     }
 
     public void EndCombo()
     {
+        
         isCombo = false;
         isAttack = false;
+        animator.SetBool("isCombo", false);
     }
 }
