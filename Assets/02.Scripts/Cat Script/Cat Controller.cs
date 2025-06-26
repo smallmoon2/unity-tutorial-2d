@@ -68,7 +68,7 @@ public class CatController : MonoBehaviour
             if (GameManager.score == 10) // 사과를 10개 먹어서 성공
             {
                 fadeUI.SetActive(true);
-                fadeUI.GetComponent<FadeRoutine>().OnFade(3f, Color.white);
+                //fadeUI.GetComponent<FadeRoutine>().OnFade(3f, Color.white);
                 GetComponent<CircleCollider2D>().enabled = false;
 
                 Debug.Log("사과 10개 먹어서 성공 이벤트");
@@ -85,7 +85,7 @@ public class CatController : MonoBehaviour
 
             gameOverUI.SetActive(true); // 게임 오버 켜기
             fadeUI.SetActive(true); // 페이드 켜기
-            fadeUI.GetComponent<FadeRoutine>().OnFade(3f, Color.black); // 페이드 실행
+            //fadeUI.GetComponent<FadeRoutine>().OnFade(3f, Color.black); // 페이드 실행
             GetComponent<CircleCollider2D>().enabled = false;
 
             Debug.Log("파이프 충돌 이벤트");

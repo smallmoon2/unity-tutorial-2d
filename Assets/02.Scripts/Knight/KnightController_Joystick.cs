@@ -26,8 +26,8 @@ public class KnightController_Joystick : MonoBehaviour
         animator = GetComponent<Animator>();
         knightRb = GetComponent<Rigidbody2D>();
 
-        jumpButton.onClick.AddListener(Jump);
-        atkButton.onClick.AddListener(Attack);
+        //jumpButton.onClick.AddListener(Jump);
+        //atkButton.onClick.AddListener(Attack);
     }
 
 
@@ -37,30 +37,30 @@ public class KnightController_Joystick : MonoBehaviour
         Move();
     }
 
-    private void OnTriggerEnter2D(Collider2D other)
-    {
-        if (other.CompareTag("Monster")){
-            Debug.Log($"{atkDamage}로 공격");
-        }
-    }
-    void OnCollisionEnter2D(Collision2D other)
-    {
-        if (other.gameObject.CompareTag("Ground"))
-        {
-            animator.SetBool("isGround", true);
-            isGround = true;
-        }
-    }
+    //private void OnTriggerEnter2D(Collider2D other)
+    //{
+    //    if (other.CompareTag("Monster")){
+    //        Debug.Log($"{atkDamage}로 공격");
+    //    }
+    //}
+    //void OnCollisionEnter2D(Collision2D other)
+    //{
+    //    if (other.gameObject.CompareTag("Ground"))
+    //    {
+    //        animator.SetBool("isGround", true);
+    //        isGround = true;
+    //    }
+    //}
 
-    void OnCollisionExit2D(Collision2D other)
-    {
-        if (other.gameObject.CompareTag("Ground"))
-        {
-            animator.SetBool("isGround", false);
-            isGround = false;
-        }
-        Debug.Log("Ground Exit");
-    }
+    //void OnCollisionExit2D(Collision2D other)
+    //{
+    //    if (other.gameObject.CompareTag("Ground"))
+    //    {
+    //        animator.SetBool("isGround", false);
+    //        isGround = false;
+    //    }
+    //    Debug.Log("Ground Exit");
+    //}
 
     public void InputJoystick(float x, float y)
     {
@@ -79,59 +79,59 @@ public class KnightController_Joystick : MonoBehaviour
             var scaleX = inputDir.x > 0 ? 1 : -1;
             transform.localScale = new Vector3(scaleX, 1, 1);
 
-            knightRb.linearVelocityX = inputDir.x * moveSpeed;
+            knightRb.linearVelocity = inputDir * moveSpeed;
         }
     }
 
-    void Jump()
-    {
-        if (isGround)
-        {
-            animator.SetTrigger("Jump");
-            knightRb.AddForceY(jumpPower, ForceMode2D.Impulse);
+    //void Jump()
+    //{
+    //    if (isGround)
+    //    {
+    //        animator.SetTrigger("Jump");
+    //        knightRb.AddForceY(jumpPower, ForceMode2D.Impulse);
  
-        }
-    }
-    void Attack()
-    {
-        if (!isAttack)
-        {
-            isAttack = true;
-            atkDamage = 3f;
-            animator.SetTrigger("Attack");
-        }
+    //    }
+    //}
+    //void Attack()
+    //{
+    //    if (!isAttack)
+    //    {
+    //        isAttack = true;
+    //        atkDamage = 3f;
+    //        animator.SetTrigger("Attack");
+    //    }
 
-        else
-        {
-            isCombo = true;
+    //    else
+    //    {
+    //        isCombo = true;
             
-        }
+    //    }
         
-    }
-    public void WaitCombo()
-    {
+    //}
+    //public void WaitCombo()
+    //{
         
-        if (isCombo)
-        {
+    //    if (isCombo)
+    //    {
             
-            atkDamage = 5f;
-            animator.SetBool("isCombo", true);
+    //        atkDamage = 5f;
+    //        animator.SetBool("isCombo", true);
             
 
-        }
-        else
-        {
-            isAttack = false;
-            animator.SetBool("isCombo", false);
+    //    }
+    //    else
+    //    {
+    //        isAttack = false;
+    //        animator.SetBool("isCombo", false);
 
-        }
-    }
+    //    }
+    //}
 
-    public void EndCombo()
-    {
+    //public void EndCombo()
+    //{
         
-        isCombo = false;
-        isAttack = false;
-        animator.SetBool("isCombo", false);
-    }
+    //    isCombo = false;
+    //    isAttack = false;
+    //    animator.SetBool("isCombo", false);
+    //}
 }
