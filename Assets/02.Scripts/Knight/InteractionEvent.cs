@@ -7,6 +7,7 @@ public class InteractionEvent : MonoBehaviour
     public enum InteractionType { SIGN, DOOR, NPC }
     public InteractionType type;
 
+    public SoundController soundController;
     public GameObject popUp;
 
     public FadeRoutine fade;
@@ -52,6 +53,7 @@ public class InteractionEvent : MonoBehaviour
 
     IEnumerator DoorRoutine(Transform player)
     {
+        soundController.EventSoundPlay("Open Door Knight");
         yield return StartCoroutine(fade.Fade(3f, Color.black, true));
 
         map.SetActive(isHouse);
@@ -63,6 +65,7 @@ public class InteractionEvent : MonoBehaviour
         isHouse = !isHouse;
 
         yield return new WaitForSeconds(1f);
+        soundController.EventSoundPlay("Open Door Knight");
         yield return StartCoroutine(fade.Fade(3f, Color.black, false));
     }
 }
