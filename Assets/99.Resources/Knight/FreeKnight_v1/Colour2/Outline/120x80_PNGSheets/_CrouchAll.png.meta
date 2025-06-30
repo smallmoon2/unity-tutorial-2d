@@ -138,8 +138,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 4b4379086cee5b24aa8fc496a7366063
-      internalID: 2068500202
+      spriteID: 8bf5f73d516061146a0ccec9ee66bc27
+      internalID: -1678076691
       vertices: []
       indices: 
       edges: []
@@ -160,8 +160,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 936ccb30677f7fb4eb3f839ebb683741
-      internalID: -1047746034
+      spriteID: 951cd1f78828eb345a4ca7c52aed4584
+      internalID: -1111692482
       vertices: []
       indices: 
       edges: []
@@ -182,8 +182,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 7341b1892c0dd47459d27eeb8daa032a
-      internalID: 1746650552
+      spriteID: c71d48401fb6d96469e80f13ec192e10
+      internalID: -307300595
       vertices: []
       indices: 
       edges: []
@@ -192,7 +192,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 497db0ccab13fde47aea3f85dee395e3
+    spriteID: 990223f960a15894e9f1e4c99c97ee0b
     internalID: 0
     vertices: []
     indices: 
@@ -202,9 +202,9 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      _CrouchAll_0: 2068500202
-      _CrouchAll_1: -1047746034
-      _CrouchAll_2: 1746650552
+      _CrouchAll_0: -1678076691
+      _CrouchAll_1: -1111692482
+      _CrouchAll_2: -307300595
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

@@ -10,38 +10,32 @@ public class KnightController_Keyboard : MonoBehaviour
     private Vector3 inputDir;
     [SerializeField] private float moveSpeed = 3f;
     [SerializeField] private float jumpPower = 13f;
-    
+
     private float atkDamage = 3f;
 
     private bool isGround;
-    private bool isCombo;
-
     private bool isAttack;
+    private bool isCombo;
+    private bool isLadder;
+
     void Start()
     {
         animator = GetComponent<Animator>();
         knightRb = GetComponent<Rigidbody2D>();
     }
 
-    void Update() // 일반적인 작업
+    void Update()
     {
         InputKeyboard();
         Jump();
         Attack();
-
     }
 
-    void FixedUpdate() // 물리적인 작업
+    void FixedUpdate()
     {
         Move();
     }
-    private void OnTriggerEnter2D(Collider2D other)
-    {
-        if (other.CompareTag("Monster"))
-        {
-            Debug.Log($"{atkDamage}로 공격");
-        }
-    }
+
     void OnCollisionEnter2D(Collision2D other)
     {
         if (other.gameObject.CompareTag("Ground"))
@@ -59,27 +53,61 @@ public class KnightController_Keyboard : MonoBehaviour
             isGround = false;
         }
     }
+    
+    void OnTriggerEnter2D(Collider2D other)
+    {
+        if (other.CompareTag("Monster"))
+        {
+            Debug.Log($"{atkDamage}로 공격");
+        }
+        
+        if (other.CompareTag("Ladder"))
+        {
+            isLadder = true;
+            knightRb.gravityScale = 0f;
+            knightRb.linearVelocity = Vector2.zero;
+        }
+    }
+    
+    void OnTriggerExit2D(Collider2D other)
+    {
+        if (other.CompareTag("Ladder"))
+        {
+            isLadder = false;
+            knightRb.gravityScale = 2f;
+            knightRb.linearVelocity = Vector2.zero;
+        }
+    }
 
     void InputKeyboard()
     {
-        float h = Input.GetAxis("Horizontal");
-        float v = Input.GetAxis("Vertical");
+        float h = Input.GetAxisRaw("Horizontal");
+        float v = Input.GetAxisRaw("Vertical");
         inputDir = new Vector3(h, v, 0);
-
+        
         animator.SetFloat("JoystickX", inputDir.x);
         animator.SetFloat("JoystickY", inputDir.y);
+
+        if (inputDir.y < 0)
+            GetComponent<CapsuleCollider2D>().size = new Vector2(0.7f, 0.3f);
+        else
+            GetComponent<CapsuleCollider2D>().size = new Vector2(0.7f, 1.7f);
     }
-    
+
     void Move()
     {
         if (inputDir.x != 0)
-
         {
             var scaleX = inputDir.x > 0 ? 1 : -1;
             transform.localScale = new Vector3(scaleX, 1, 1);
+            
             knightRb.linearVelocityX = inputDir.x * moveSpeed;
         }
-            
+
+        if (isLadder && inputDir.y != 0)
+        {
+            knightRb.linearVelocityY = inputDir.y * moveSpeed;
+        }
     }
 
     void Jump()
@@ -90,9 +118,10 @@ public class KnightController_Keyboard : MonoBehaviour
             knightRb.AddForceY(jumpPower, ForceMode2D.Impulse);
         }
     }
+    
     void Attack()
     {
-        if (Input.GetKeyDown(KeyCode.Z))
+        if (Input.GetKeyDown(KeyCode.Z)) 
         {
             if (!isAttack)
             {
@@ -100,38 +129,29 @@ public class KnightController_Keyboard : MonoBehaviour
                 atkDamage = 3f;
                 animator.SetTrigger("Attack");
             }
-
             else
-            {
                 isCombo = true;
-            }
         }
-
     }
+
     public void WaitCombo()
     {
-
         if (isCombo)
         {
-
             atkDamage = 5f;
             animator.SetBool("isCombo", true);
-
-
         }
         else
         {
             isAttack = false;
             animator.SetBool("isCombo", false);
-
         }
     }
-
+     
     public void EndCombo()
     {
-
-        isCombo = false;
         isAttack = false;
+        isCombo = false;
         animator.SetBool("isCombo", false);
     }
 }

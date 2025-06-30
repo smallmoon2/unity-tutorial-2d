@@ -7,69 +7,27 @@ public class KnightController_Joystick : MonoBehaviour
     private Animator animator;
     private Rigidbody2D knightRb;
 
-    [SerializeField] private Button jumpButton;
-    [SerializeField] private Button atkButton;
-
     private Vector3 inputDir;
+
     [SerializeField] private float moveSpeed = 3f;
-    [SerializeField] private float jumpPower = 13f;
-
-    private float atkDamage = 3f;
-
-    private bool isCombo;
-    private bool isAttack;
-
-    private bool isGround;
 
     void Start()
     {
         animator = GetComponent<Animator>();
         knightRb = GetComponent<Rigidbody2D>();
-
-        //jumpButton.onClick.AddListener(Jump);
-        //atkButton.onClick.AddListener(Attack);
     }
-
-
 
     void FixedUpdate()
     {
         Move();
     }
-
-    //private void OnTriggerEnter2D(Collider2D other)
-    //{
-    //    if (other.CompareTag("Monster")){
-    //        Debug.Log($"{atkDamage}·Î °ø°Ý");
-    //    }
-    //}
-    //void OnCollisionEnter2D(Collision2D other)
-    //{
-    //    if (other.gameObject.CompareTag("Ground"))
-    //    {
-    //        animator.SetBool("isGround", true);
-    //        isGround = true;
-    //    }
-    //}
-
-    //void OnCollisionExit2D(Collision2D other)
-    //{
-    //    if (other.gameObject.CompareTag("Ground"))
-    //    {
-    //        animator.SetBool("isGround", false);
-    //        isGround = false;
-    //    }
-    //    Debug.Log("Ground Exit");
-    //}
-
+    
     public void InputJoystick(float x, float y)
     {
         inputDir = new Vector3(x, y, 0).normalized;
 
         animator.SetFloat("JoystickX", inputDir.x);
         animator.SetFloat("JoystickY", inputDir.y);
-
-
     }
 
     void Move()
@@ -82,56 +40,4 @@ public class KnightController_Joystick : MonoBehaviour
             knightRb.linearVelocity = inputDir * moveSpeed;
         }
     }
-
-    //void Jump()
-    //{
-    //    if (isGround)
-    //    {
-    //        animator.SetTrigger("Jump");
-    //        knightRb.AddForceY(jumpPower, ForceMode2D.Impulse);
- 
-    //    }
-    //}
-    //void Attack()
-    //{
-    //    if (!isAttack)
-    //    {
-    //        isAttack = true;
-    //        atkDamage = 3f;
-    //        animator.SetTrigger("Attack");
-    //    }
-
-    //    else
-    //    {
-    //        isCombo = true;
-            
-    //    }
-        
-    //}
-    //public void WaitCombo()
-    //{
-        
-    //    if (isCombo)
-    //    {
-            
-    //        atkDamage = 5f;
-    //        animator.SetBool("isCombo", true);
-            
-
-    //    }
-    //    else
-    //    {
-    //        isAttack = false;
-    //        animator.SetBool("isCombo", false);
-
-    //    }
-    //}
-
-    //public void EndCombo()
-    //{
-        
-    //    isCombo = false;
-    //    isAttack = false;
-    //    animator.SetBool("isCombo", false);
-    //}
 }

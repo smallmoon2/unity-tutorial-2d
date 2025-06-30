@@ -390,10 +390,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1a1e89f1233cf694cb29419573f50633, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  jumpButton: {fileID: 0}
-  atkButton: {fileID: 0}
   moveSpeed: 3
-  jumpPower: 13
 --- !u!70 &69004840
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
@@ -19855,6 +19852,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8c95e9e46220b364cb36dfbd1bb7b36b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  target: {fileID: 0}
   offset: {x: 0, y: 0, z: 0}
   smoothSpeed: 5
   minBound: {x: -12.5, y: -4.8}
@@ -24673,7 +24671,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 61fda1f068eef6d47a553e0800333674, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  fade: {fileID: 1818258361}
+  fade: {fileID: 1818258363}
   portalEffect: {fileID: 256167944}
   loadingImage: {fileID: 323051073}
   progressBar: {fileID: 801743894}
@@ -33025,6 +33023,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1429041677}
   - component: {fileID: 1429041678}
+  - component: {fileID: 1429041679}
   m_Layer: 5
   m_Name: Fade
   m_TagString: Untagged
@@ -33062,6 +33061,18 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 58feb1ff47049fe4a8be9f45609e86cf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1429041679
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1429041676}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8e8039efff37b664990f1aa21e9c84d3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   fadePanel: {fileID: 1746222269}
@@ -36319,6 +36330,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1818258362}
   - component: {fileID: 1818258361}
+  - component: {fileID: 1818258363}
   m_Layer: 5
   m_Name: Fade (1)
   m_TagString: Untagged
@@ -36338,7 +36350,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 58feb1ff47049fe4a8be9f45609e86cf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  fadePanel: {fileID: 553632376}
 --- !u!224 &1818258362
 RectTransform:
   m_ObjectHideFlags: 0
@@ -36359,6 +36370,19 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1818258363
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1818258360}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8e8039efff37b664990f1aa21e9c84d3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  fadePanel: {fileID: 553632376}
 --- !u!1 &1854287045
 GameObject:
   m_ObjectHideFlags: 0
