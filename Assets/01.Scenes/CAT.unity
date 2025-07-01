@@ -5197,7 +5197,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1707433418}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 58feb1ff47049fe4a8be9f45609e86cf, type: 3}
+  m_Script: {fileID: 11500000, guid: 8e8039efff37b664990f1aa21e9c84d3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   fadePanel: {fileID: 1707433421}
@@ -5377,8 +5377,8 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 427129096}
-  - {fileID: 1707433419}
   - {fileID: 1017879060}
+  - {fileID: 1707433419}
   m_Father: {fileID: 1353553907}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}

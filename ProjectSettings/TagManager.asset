@@ -13,6 +13,8 @@ TagManager:
   - Coin
   - Monster
   - TrackingObject
+  - Ladder
+  - Return
   layers:
   - Default
   - TransparentFX
