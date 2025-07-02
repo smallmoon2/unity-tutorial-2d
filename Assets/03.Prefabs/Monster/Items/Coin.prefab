@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 5644377458386075744}
   - component: {fileID: 538655749798813273}
   - component: {fileID: 440709659632662458}
-  - component: {fileID: 4803135265854449205}
+  - component: {fileID: 200735922170889846}
   m_Layer: 6
   m_Name: Coin
   m_TagString: Coin
@@ -153,7 +153,7 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
---- !u!114 &4803135265854449205
+--- !u!114 &200735922170889846
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -162,7 +162,6 @@ MonoBehaviour:
   m_GameObject: {fileID: 6408646931340575340}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6bb1fc2e3310358408165fc5229b88d5, type: 3}
+  m_Script: {fileID: 11500000, guid: 67fcc717535cfb34685bf26ae06f705f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  potionType: 0

@@ -1465,7 +1465,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Base-01_61
+      name: bag_background
       rect:
         serializedVersion: 2
         x: 95
@@ -1474,7 +1474,7 @@ TextureImporter:
         height: 18
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
+      border: {x: 2, y: 2, z: 2, w: 2}
       customData: 
       outline: []
       physicsShape: []
@@ -1974,7 +1974,6 @@ TextureImporter:
       Base-01_58: -555014074
       Base-01_59: 1475854543
       Base-01_6: 459169310
-      Base-01_61: -1673962334
       Base-01_62: 410764534
       Base-01_63: 2700857
       Base-01_64: 179739215
@@ -1999,6 +1998,7 @@ TextureImporter:
       NPC_Talk: 1897696575
       Setting: -240281541
       Yellow Circle: -865271686
+      bag_background: -1673962334
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

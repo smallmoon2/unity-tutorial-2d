@@ -1,43 +1,12 @@
 fileFormatVersion: 2
-guid: 048dae4a3e3ffa741b83654644b60a16
-AssetOrigin:
-  serializedVersion: 1
-  productId: 167949
-  packageName: Monsters_Creatures_Fantasy
-  packageVersion: 1.0
-  assetPath: Assets/99.Resources/Monster/Monsters Creatures Fantasy/Sprites/Goblin/Run.png
-  uploadId: 365724
+guid: 679e4aae1a267dc4a9b4c819a30079ca
 TextureImporter:
-  internalIDToNameTable:
-  - first:
-      213: 4944230376442633554
-    second: Run_0
-  - first:
-      213: -2274363484027164459
-    second: Run_1
-  - first:
-      213: 8284087734974297348
-    second: Run_2
-  - first:
-      213: 5304202850863732263
-    second: Run_3
-  - first:
-      213: 2833043080597125133
-    second: Run_4
-  - first:
-      213: -2217414122262695004
-    second: Run_5
-  - first:
-      213: -4440497016933152808
-    second: Run_6
-  - first:
-      213: 8676454946275842879
-    second: Run_7
+  internalIDToNameTable: []
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
     mipMapMode: 0
-    enableMipMap: 1
+    enableMipMap: 0
     sRGBTexture: 1
     linearTexture: 0
     fadeOut: 0
@@ -70,7 +39,7 @@ TextureImporter:
     mipBias: 0
     wrapU: 1
     wrapV: 1
-    wrapW: 1
+    wrapW: 0
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
@@ -79,7 +48,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 30
+  spritePixelsToUnits: 20
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -94,9 +63,9 @@ TextureImporter:
   compressionQualitySet: 0
   textureFormatSet: 0
   ignorePngGamma: 0
-  applyGammaDecoding: 1
+  applyGammaDecoding: 0
   swizzle: 50462976
-  cookieLightType: 1
+  cookieLightType: 0
   platformSettings:
   - serializedVersion: 4
     buildTarget: DefaultTexturePlatform
@@ -125,20 +94,7 @@ TextureImporter:
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 4
-    buildTarget: WindowsStoreApps
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 1
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    ignorePlatformSupport: 0
-    androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 0
-  - serializedVersion: 4
-    buildTarget: Lumin
+    buildTarget: Android
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
@@ -163,194 +119,225 @@ TextureImporter:
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
-  - serializedVersion: 4
-    buildTarget: Android
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 1
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    ignorePlatformSupport: 0
-    androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Run_0
+      name: _Death_0
       rect:
         serializedVersion: 2
-        x: 56
-        y: 51
+        x: 36
+        y: 0
+        width: 30
+        height: 39
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: eda786bfd15000d45bf1e4af42c0867c
+      internalID: 1662879366
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: _Death_1
+      rect:
+        serializedVersion: 2
+        x: 151
+        y: 2
+        width: 29
+        height: 38
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3ae7fe54d89324940bc12d8ef2234a5c
+      internalID: -1975292955
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: _Death_2
+      rect:
+        serializedVersion: 2
+        x: 265
+        y: 6
+        width: 32
+        height: 25
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 82e65aefe5cb6744db096f63d8b4b3d3
+      internalID: 1243009674
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: _Death_3
+      rect:
+        serializedVersion: 2
+        x: 379
+        y: 7
         width: 35
-        height: 36
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+        height: 23
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 54b0ca44d3d5b934e877cf64e627e478
-      internalID: 4944230376442633554
+      spriteID: f1b868d92f72d104fb158870541de48c
+      internalID: -1977986705
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Run_1
+      name: _Death_4
       rect:
         serializedVersion: 2
-        x: 209
-        y: 49
-        width: 27
-        height: 37
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+        x: 493
+        y: 1
+        width: 38
+        height: 23
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: ab5408ff23f54104cb981794bf76def5
-      internalID: -2274363484027164459
+      spriteID: 39b2c26296f3f2247889b5b580176551
+      internalID: 2126923525
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Run_2
+      name: _Death_5
       rect:
         serializedVersion: 2
-        x: 366
-        y: 49
-        width: 20
-        height: 37
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+        x: 613
+        y: 0
+        width: 37
+        height: 21
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 4793f33d0ab47a3498d38e6e27818126
-      internalID: 8284087734974297348
+      spriteID: 55e9105a54f6a4b43aacb28c1f01912a
+      internalID: 786518410
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Run_3
+      name: _Death_6
       rect:
         serializedVersion: 2
-        x: 514
-        y: 49
-        width: 26
-        height: 36
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+        x: 733
+        y: 0
+        width: 37
+        height: 22
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: c4160be463db84c4391dfa510d3e956c
-      internalID: 5304202850863732263
+      spriteID: 433af5416d2e6184ab786d78c3e31b3b
+      internalID: 1238803852
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Run_4
+      name: _Death_7
       rect:
         serializedVersion: 2
-        x: 661
-        y: 52
-        width: 33
-        height: 35
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+        x: 853
+        y: 0
+        width: 39
+        height: 17
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 0d038ec49c698a64eb7f14b7e23f8357
-      internalID: 2833043080597125133
+      spriteID: 111c154f1f9ccbb498979a3429f32d62
+      internalID: -1226921821
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Run_5
+      name: _Death_8
       rect:
         serializedVersion: 2
-        x: 817
-        y: 49
-        width: 25
-        height: 37
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+        x: 973
+        y: 0
+        width: 41
+        height: 13
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 53b23c0e9bbcec24182a847718028840
-      internalID: -2217414122262695004
+      spriteID: d01b469211dd35942a56fea55332f3ce
+      internalID: -607089913
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Run_6
+      name: _Death_9
       rect:
         serializedVersion: 2
-        x: 969
-        y: 49
-        width: 23
-        height: 37
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+        x: 1093
+        y: 0
+        width: 41
+        height: 13
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 3a7b55ea591758940946369a17cfd60c
-      internalID: -4440497016933152808
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Run_7
-      rect:
-        serializedVersion: 2
-        x: 1112
-        y: 49
-        width: 26
-        height: 36
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: b86c988cf9574e940aadd84625fb81bc
-      internalID: 8676454946275842879
+      spriteID: e0e15ccf43c526a4196d2a3596447251
+      internalID: 1015504742
       vertices: []
       indices: 
       edges: []
@@ -359,7 +346,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 5e97eb03825dee720800000000000000
+    spriteID: 8dc3360f3fcdc7c4180891a24d333427
     internalID: 0
     vertices: []
     indices: 
@@ -369,14 +356,16 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      Run_0: 4944230376442633554
-      Run_1: -2274363484027164459
-      Run_2: 8284087734974297348
-      Run_3: 5304202850863732263
-      Run_4: 2833043080597125133
-      Run_5: -2217414122262695004
-      Run_6: -4440497016933152808
-      Run_7: 8676454946275842879
+      _Death_0: 1662879366
+      _Death_1: -1975292955
+      _Death_2: 1243009674
+      _Death_3: -1977986705
+      _Death_4: 2126923525
+      _Death_5: 786518410
+      _Death_6: 1238803852
+      _Death_7: -1226921821
+      _Death_8: -607089913
+      _Death_9: 1015504742
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

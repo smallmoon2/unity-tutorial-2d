@@ -1,6 +1,7 @@
 using UnityEngine;
 
 public class Door : MonoBehaviour, IDamageable
+
 {
     public void TakeDamage(float damage)
     {
