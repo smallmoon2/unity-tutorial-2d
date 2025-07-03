@@ -129,7 +129,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   monsterState: 0
   target: {fileID: 0}
+  itemManager: {fileID: 0}
+  hpBar: {fileID: 2334115138381379717}
   hp: 3
+  currHp: 0
   speed: 0
   attackTime: 0
   atkDamage: 0

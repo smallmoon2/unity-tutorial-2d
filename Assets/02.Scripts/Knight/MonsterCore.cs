@@ -1,4 +1,4 @@
-using System;
+
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -105,7 +105,16 @@ public abstract class MonsterCore : MonoBehaviour, IDamageable
         monsterColl.enabled = false;
         monsterRb.gravityScale = 0f;
 
-        itemManager.DropItem(transform.position);
+        int itemCount = Random.Range(0, 3);
+
+        if (itemCount > 0)
+        {
+            for (int i = 0; i < itemCount; i++)
+            {
+                itemManager.DropItem(transform.position);
+            }
+        }
+    
     }
 
 }
